@@ -14,8 +14,8 @@ import ephemereal_3rules
 import histUtils as hu
 import IDCards_maker as idcm
 
-inpath='/home/matteo/WORK/PhD/projets/ONDELETTES/FINAL/4/scripts'
-outpath='/home/matteo/WORK/PhD/projets/ONDELETTES/FINAL/4/scripts'
+inpath='../../4/scripts'
+outpath='../../4/scripts'
 
 filename = 'g_big_w.gexf'
 

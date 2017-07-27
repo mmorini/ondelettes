@@ -17,7 +17,7 @@ import histUtils as hu
 
 #import csv
 
-datadir='/home/matteo/WORK/PhD/projets/ONDELETTES/FINAL/1.2.3'
+datadir='../../1.2.3'
 
 firstyear=1970
 lastyear=2010
