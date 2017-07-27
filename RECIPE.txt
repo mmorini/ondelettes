@@ -1,0 +1,155 @@
+1. PREPROCESSING
+
+   1a. Parse WoS "savedrecs" data to obtain ".dat" files
+   1b. Handclean files (Astrophysics Ade PAR articles*)
+
+   1c. Make temporal slices
+
+2. COMMUNITY DETECTION
+
+   2. Run Louvain algorithm (atoms version) on each slice
+
+3. OBTAIN IdCards (optional)
+
+   3. Make pdf files out of tex files
+
+----------------------------------------------------------
+1.-3.: bash waves.sh [check directories]
+----------------------------------------------------------
+
+
+4. BUILD HISTORICAL NETWORK
+
+   4. Link temporal slices (jaccard distances, colors, quality metric)
+      we see more links than usual, workingon ATOMS, not usual comms
+
+----------------------------------------------------------
+4.: python jaccard_history.py [check directories]
+----------------------------------------------------------
+
+5. [does not exist anymore]
+
+6. add_attributes_colors_positions, final cleaning 
+
+----------------------------------------------------------
+6. finalize_graph.py [check directories]
+----------------------------------------------------------
+
+
+
+PRE-POST salient facts
+
+1994:
+	0 [orthonormal bases, Unser, 164 arts] OHI; NON VA
+		split into
+		[0s0]
+		[1s0]
+
+1997:
+	4 [wavelets (quantization), Ramchandran, 143 arts]
+		split into
+		400000 [wavelets (smoothing parameter), Donoho, 48 arts]
+		400001 [wavelets (image denoising), Ramchandran, 95 arts]
+
+1998:  
+	12 [wavelets (image denoising), Baraniuk, 51 arts]
+	6 [quantization, Ramchandran, 56 arts]
+
+	64 [wavelets (ridge function), Donoho, 7 arts] 
+		merged into 120000 [wavelets (image denoising), Ramchandran, 114 arts]
+
+	16 [wavelets (domain decomposition), Dahmen, 41 arts]
+	54 [wavelets (multiwavelets), Heil, 10 arts]
+		merged into 160000 [wavelets (domain decomposition), Dahmen, 51 arts]
+
+
+2007:
+	36 [vision, Bovik, 16 arts]
+	26 [quality assessment, Bovik, 41 arts]
+		merged into 360000 [quality assessment, Bovik, 57 arts]
+
+
+------------
+
+Jaccard across different sets (10) histories - robustness / comparison with-without skifo filtering  AFAFAF
+modularity - correlated? how much do we lose?
+trovare nome per metodo e misura di skifo
+
+
+D CLEANUP 0 | Graph g_big_w.gexf score: 0.022783 after merging nodes ('12_1998', '6_1998', '64_1998') (w = -114.000000)
+D CLEANUP 0 | Graph g_big_w.gexf score: 0.060458 after merging nodes ('12_1998', '6_1998', '64_1998') (w = -114.000000)
+D CLEANUP 1 | Graph g_big_w.gexf score: 0.061694 after merging nodes ('30_2007', '5_2007') (w = -64.000000)
+D CLEANUP 2 | Graph g_big_w.gexf score: 0.069105 after merging nodes ('0_2000', '1_2000') (w = -63.000000)
+D CLEANUP 3 | Graph g_big_w.gexf score: 0.074458 after merging nodes ('36_2007', '26_2007') (w = -57.000000)
+D CLEANUP 4 | Graph g_big_w.gexf score: 0.074458 after merging nodes ('53_1993', '6_1993', '26_1993') (w = -52.000000)
+D CLEANUP 4 | Graph g_big_w.gexf score: 0.085301 after merging nodes ('53_1993', '6_1993', '26_1993') (w = -52.000000)
+D CLEANUP 5 | Graph g_big_w.gexf score: 0.093604 after merging nodes ('16_1998', '54_1998') (w = -51.000000)
+D CLEANUP 6 | Graph g_big_w.gexf score: 0.096898 after merging nodes ('9_1989', '6_1989') (w = -48.000000)
+D CLEANUP 7 | Graph g_big_w.gexf score: 0.103143 after merging nodes ('4_1998', '10_1998') (w = -42.000000)
+D CLEANUP 8 | Graph g_big_w.gexf score: 0.110829 after merging nodes ('25_1996', '5_1996') (w = -40.000000)
+D CLEANUP 9 | Graph g_big_w.gexf score: 0.109662 after merging nodes ('8_1989', '3_1989') (w = -36.000000)
+D CLEANUP 10 | Graph g_big_w.gexf score: 0.109662 after merging nodes ('27_1996', '20_1996') (w = -35.000000)
+D CLEANUP 11 | Graph g_big_w.gexf score: 0.107604 after merging nodes ('21_1998', '15_1998') (w = -32.000000)
+D CLEANUP 12 | Graph g_big_w.gexf score: 0.107604 after merging nodes ('42_1996', '3_1996', '41_1996') (w = -31.000000)
+D CLEANUP 12 | Graph g_big_w.gexf score: 0.107604 after merging nodes ('42_1996', '3_1996', '41_1996') (w = -31.000000)
+D CLEANUP 13 | Graph g_big_w.gexf score: 0.107398 after merging nodes ('11_1989', '44_1989') (w = -28.000000)
+D CLEANUP 14 | Graph g_big_w.gexf score: 0.107604 after merging nodes ('2_1993', '1_1993') (w = -26.000000)
+D CLEANUP 15 | Graph g_big_w.gexf score: 0.107604 after merging nodes ('66_1998', '76_1998', '75_1998') (w = -26.000000)
+D CLEANUP 15 | Graph g_big_w.gexf score: 0.112133 after merging nodes ('66_1998', '76_1998', '75_1998') (w = -26.000000)
+D CLEANUP 16 | Graph g_big_w.gexf score: 0.111447 after merging nodes ('7_1981', '6_1981') (w = -14.000000)
+D CLEANUP 17 | Graph g_big_w.gexf score: 0.111447 after merging nodes ('69_1996', '16_1996') (w = -13.000000)
+X CLEANUP 1 | Graph g_big_w.gexf score: 0.176640 after splitting node 0_1994 (w = -164.000000)
+X CLEANUP 2 | Graph g_big_w.gexf score: 0.186453 after splitting node 4_1997 (w = -143.000000)
+X CLEANUP 3 | Graph g_big_w.gexf score: 0.197777 after splitting node 17_2005 (w = -90.000000)
+X CLEANUP 4 | Graph g_big_w.gexf score: 0.202992 after splitting node 3_2008 (w = -76.000000)
+X CLEANUP 5 | Graph g_big_w.gexf score: 0.216099 after splitting node 3_1992 (w = -73.000000)
+X CLEANUP 6 | Graph g_big_w.gexf score: 0.224403 after splitting node 7_2005 (w = -69.000000)
+X CLEANUP 7 | Graph g_big_w.gexf score: 0.228658 after splitting node 1_1988 (w = -62.000000)
+X CLEANUP 8 | Graph g_big_w.gexf score: 0.232158 after splitting node 9_2004 (w = -51.000000)
+X CLEANUP 9 | Graph g_big_w.gexf score: 0.235383 after splitting node 31_1997 (w = -47.000000)
+X CLEANUP 10 | Graph g_big_w.gexf score: 0.238540 after splitting node 6_1999 (w = -46.000000)
+X CLEANUP 11 | Graph g_big_w.gexf score: 0.240804 after splitting node 26_2008 (w = -33.000000)
+X CLEANUP 12 | Graph g_big_w.gexf score: 0.244510 after splitting node 15_1995 (w = -31.000000)
+X CLEANUP 13 | Graph g_big_w.gexf score: 0.246432 after splitting node 16_2008 (w = -28.000000)
+X CLEANUP 14 | Graph g_big_w.gexf score: 0.248079 after splitting node 2_2008 (w = -24.000000)
+X CLEANUP 15 | Graph g_big_w.gexf score: 0.249314 after splitting node 19_2002 (w = -18.000000)
+
+
+
+
+* 26 Ade PAR articles are took out:
+
+4824    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 34      Planck early results. XI. Calibration of the local galaxy clus
+ter Sunyaev-Zeldovich scaling relations   WOS:000298485100012
+4825    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 45      Planck early results. XVIII. The power spectrum of cosmic infr
+ared background anisotropies      WOS:000298485100019
+4826    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 32      Planck early results. IV. First assessment of the High Frequen
+cy Instrument in-flight performance       WOS:000298485100005
+4827    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 32      Planck early results. XVI. The Planck view of nearby galaxies
+   WOS:000298485100017
+4828    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 53      Planck early results. I. The Planck mission     WOS:0002984851
+00002
+4829    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 43      Planck early results. XIX. All-sky temperature and dust optica
+l depth from Planck and IRAS. Constraints on the "dark gas" in our Galaxy WOS:000298485100020
+4830    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 31      Planck early results. XIII. Statistical properties of extragal
+actic radio sources in the Planck Early Release Compact Source Catalogue  WOS:000298485100014
+4831    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 36      Planck early results. XXIII. The first all-sky survey of Galac
+tic cold clumps   WOS:000298485100024
+4832    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 28      Planck early results. II. The thermal performance of Planck
+     WOS:000298485100003
+4833    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 38      Planck early results. VII. The Early Release Compact Source Ca
+talogue   WOS:000298485100008
+4834    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 32      Planck early results. XXII. The submillimetre properties of a 
+sample of Galactic cold clumps    WOS:000298485100023
+4835    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 36      Planck early results. XVII. Origin of the submillimetre excess
+ dust emission in the Magellanic Clouds   WOS:000298485100018
+4836    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 35      Planck early results. XX. New light on anomalous microwave emi
+ssion from spinning dust grains   WOS:000298485100021
+4837    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 29      Planck early results. XIV. ERCSC validation and extreme radio 
+sources   WOS:000298485100015
+4838    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 34      Planck early results. VI. The High Frequency Instrument data p
+rocessing WOS:000298485100007
+4839    Ade PAR 2011    ASTRON ASTROPHYS        536                     Journal Article 55      Planck early results. VIII. The all-sky early Sunyaev-Zeldovic
+h cluster sample  WOS:000298485100009
+
+
